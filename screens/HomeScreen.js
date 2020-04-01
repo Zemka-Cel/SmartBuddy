@@ -101,8 +101,7 @@ export default function HomeScreen() {
 <View>
         <Image
             style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            source={{             uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
             }}
           />  
           </View>
