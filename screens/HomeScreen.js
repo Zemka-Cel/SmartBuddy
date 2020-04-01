@@ -17,7 +17,9 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.categoriesContainer}>
-          <Image
+          <Text style={styles.categoriesText}>Categories</Text>
+          
+          {/* <Image
             style={styles.categoriesCard}
             source={{
               uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
@@ -34,11 +36,89 @@ export default function HomeScreen() {
             source={{
               uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
             }}
-          />
+          /> */}
         </View>
+      
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        
+        justifyContent: 'space-between', }}>
+          
+      <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between', }}>
 
+        <View>
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View>
+          <View>  
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View> 
+        
+        </View>
+        <View style={{height: 20}}></View>
+        <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between', }}>
 
-        <View style={styles.getStartedContainer}>
+<View>
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View>
+          <View>  
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View> 
+        
+        </View>
+        <View style={{height: 20}}></View>
+        <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between', }}>
+
+<View>
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View>
+          <View>  
+        <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />  
+          </View> 
+        
+        </View>
+      </View>
+
+        {/* <View style={styles.getStartedContainer}>
           
           <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
 
@@ -55,17 +135,18 @@ export default function HomeScreen() {
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
           </TouchableOpacity>
-        </View>
-      </ScrollView>
+        </View> */}
+        </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
+      {/* <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
         <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
         </View>
-      </View>
+      </View> */}
     </View>
+    
   );
 }
 
@@ -131,6 +212,14 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'left',
   },
+  categoriesText: {
+    fontSize: 23,
+    color: 'black',
+    textAlign: 'left',
+    fontWeight: 'bold',
+    paddingBottom:10,
+
+  },
   welcomeDescription: {
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',
@@ -150,13 +239,15 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   categoriesContainer: {
-    padding: 10,
+    paddingTop: 10,
+    paddingBottom:10,
   },
   categoriesCard: {
     borderRadius: 10,
     overflow: 'hidden',
-    width: 60,
-    height: 60,
+    width: 150,
+    height: 150,
+    flex: 1,
   },
   getStartedContainer: {
     alignItems: 'center',
