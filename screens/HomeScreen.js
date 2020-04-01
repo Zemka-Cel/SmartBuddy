@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
 import { MonoText } from '../components/StyledText';
@@ -10,19 +9,37 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeText}>Hi, user!</Text>
+          <Text style={styles.welcomeDescription}>Connect with your future tutor.</Text>
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
+            <Text style={styles.tutorButtonText}>Find your tutor</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.categoriesContainer}>
           <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
+          />
+          <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://miro.medium.com/max/3340/0*jmrpnXe-djmTh37l.',
+            }}
+          />
+          <Image
+            style={styles.categoriesCard}
+            source={{
+              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
+            }}
           />
         </View>
 
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
 
+        <View style={styles.getStartedContainer}>
+          
           <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
 
           <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
@@ -30,7 +47,7 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
+            Change any of text, save the file, and your app will automatically reload.
           </Text>
         </View>
 
@@ -102,19 +119,44 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    padding: 20,
+    justifyContent: 'space-evenly',
   },
   welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
+    alignItems: 'stretch',
     marginBottom: 20,
   },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+  welcomeText: {
+    fontSize: 23,
+    color: 'black',
+    textAlign: 'left',
+  },
+  welcomeDescription: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    textAlign: 'left',
+  },
+  tutorButton: {
+    backgroundColor: 'rgba(255,71,105, 1)',
+    alignItems: 'stretch',
+    borderRadius: 10,
+    marginTop: 5,
+  },
+  tutorButtonText: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    padding: 15,
+  },
+  categoriesContainer: {
+    padding: 10,
+  },
+  categoriesCard: {
+    borderRadius: 10,
+    overflow: 'hidden',
+    width: 60,
+    height: 60,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -135,7 +177,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
-    textAlign: 'center',
+    textAlign: 'left',
   },
   tabBarInfoContainer: {
     position: 'absolute',
