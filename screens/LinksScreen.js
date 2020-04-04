@@ -1,13 +1,27 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { Avatar } from 'react-native-elements';
 
 export default function LinksScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <OptionButton
+      <View style={{flex:1, alignItems: 'center'}}> 
+        <Avatar 
+          size="large" 
+          rounded title="MT" 
+          onPress={() => console.log("Works!")} 
+          activeOpacity={0.7} /> 
+        <Text style={styles.userName}>Username</Text> 
+        <Text style={styles.userEmail}>user@email.com</Text>
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
+        <Text style={styles.editButtonText}>EDIT</Text> 
+        </TouchableOpacity> 
+      </View>
+
+      {/* <OptionButton
         icon="md-school"
         label="Read the Expo documentation"
         onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
@@ -24,7 +38,7 @@ export default function LinksScreen() {
         label="Ask a question on the forums"
         onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
         isLastOption
-      />
+      /> */}
     </ScrollView>
   );
 }
@@ -54,6 +68,27 @@ const styles = StyleSheet.create({
   },
   optionIconContainer: {
     marginRight: 12,
+  },
+  userName: {
+    size: 23,
+    fontWeight: 'bold',
+    padding: 5,
+  },
+  userEmail: {
+    size: 17,
+    fontWeight: 100,
+    padding: 5,
+  },
+  editButton: {
+    padding: 3,
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderRadius: 10,
+    borderWidth: 1,
+  },
+  editButtonText: {
+    color: 'grey',
+    padding: 5,
   },
   option: {
     backgroundColor: '#fdfdfd',
