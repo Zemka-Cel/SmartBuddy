@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   userName: {
-    size: 23,
+    fontSize: 23,
     fontWeight: 'bold',
     padding: 5,
   },
   userEmail: {
-    size: 17,
-    fontWeight: 100,
+    fontSize: 17,
+    fontWeight: '100',
     padding: 5,
   },
   editButton: {

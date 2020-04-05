@@ -3,6 +3,7 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Scrol
 import * as WebBrowser from 'expo-web-browser';
 
 import { MonoText } from '../components/StyledText';
+import { Assets } from '@react-navigation/stack';
 
 export default function HomeScreen() {
   return (
@@ -52,18 +53,14 @@ export default function HomeScreen() {
 
         <View>
         <Image
-            style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            style={styles.categoriesCard}        
+            source={ require('../assets/images/math.jpg')}
           />  
           </View>
           <View>  
         <Image
             style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            source={ require('../assets/images/coding.jpg')}
           />  
           </View> 
         
@@ -77,17 +74,13 @@ export default function HomeScreen() {
 <View>
         <Image
             style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            source={ require('../assets/images/math.jpg')}
           />  
           </View>
           <View>  
         <Image
             style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            source={ require('../assets/images/math.jpg')}
           />  
           </View> 
         
@@ -101,16 +94,13 @@ export default function HomeScreen() {
 <View>
         <Image
             style={styles.categoriesCard}
-            source={{             uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            source={ require('../assets/images/math.jpg')}
           />  
           </View>
           <View>  
         <Image
             style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
+            source={ require('../assets/images/math.jpg')}
           />  
           </View> 
         
@@ -209,6 +199,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 23,
     color: 'black',
+    fontWeight: 'bold',
     textAlign: 'left',
   },
   categoriesText: {
@@ -243,10 +234,11 @@ const styles = StyleSheet.create({
   },
   categoriesCard: {
     borderRadius: 10,
-    overflow: 'hidden',
     width: 150,
     height: 150,
+    resizeMode:'contain',
     flex: 1,
+    
   },
   getStartedContainer: {
     alignItems: 'center',
