@@ -3,18 +3,15 @@ import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
-import { Avatar } from 'react-native-elements';
+import { ProfilePicture } from '../components/ProfilePicture';
+import {Username} from '../components/Username';
 
-export default function LinksScreen() {
+export default function Profile() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={{flex:1, alignItems: 'center'}}> 
-        <Avatar 
-          size="large" 
-          rounded title="MT" 
-          onPress={() => console.log("Works!")} 
-          activeOpacity={0.7} /> 
-        <Text style={styles.userName}>Username</Text> 
+        <ProfilePicture></ProfilePicture>
+        <Username style={styles.userName}>Username</Username> 
         <Text style={styles.userEmail}>user@email.com</Text>
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
         <Text style={styles.editButtonText}>EDIT</Text> 
