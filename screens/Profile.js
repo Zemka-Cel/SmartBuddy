@@ -12,11 +12,38 @@ export default function Profile() {
       <View style={{flex:1, alignItems: 'center'}}> 
         <ProfilePicture></ProfilePicture>
         <Username style={styles.userName}>Username</Username> 
-        <Text style={styles.userEmail}>user@email.com</Text>
+        <Text style={styles.userEmail}>username@email.com</Text>
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
         <Text style={styles.editButtonText}>EDIT</Text> 
         </TouchableOpacity> 
       </View>
+
+      <View style={{
+       
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 15, }}>
+
+        <View>
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Algebra</Text> 
+        </TouchableOpacity> 
+        </View>
+        <View>
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Coding</Text> 
+        </TouchableOpacity> 
+        </View>
+        <View>
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Filters</Text> 
+        </TouchableOpacity> 
+        </View>
+       
+       </View>
+       
+       
+
 
       {/* <OptionButton
         icon="md-school"
@@ -62,6 +89,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 15,
+    padding:20,
   },
   optionIconContainer: {
     marginRight: 12,
@@ -69,7 +97,7 @@ const styles = StyleSheet.create({
   userName: {
     fontSize: 23,
     fontWeight: 'bold',
-    padding: 5,
+    padding: 2,
   },
   userEmail: {
     fontSize: 17,
@@ -77,15 +105,33 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   editButton: {
+    marginTop: 5,
     padding: 3,
     backgroundColor: 'white',
     borderColor: 'grey',
-    borderRadius: 10,
+    borderRadius: 13,
     borderWidth: 1,
   },
   editButtonText: {
+    fontSize: 17,
     color: 'grey',
+    fontWeight:500,
     padding: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  filterButtons: {
+    marginTop:20,
+    padding: 3,
+    backgroundColor: 'grey',
+    borderColor: 'grey',
+    borderRadius: 20,
+    borderWidth: 1,
+  },
+  filterButtonsText: {
+    padding:5,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   option: {
     backgroundColor: '#fdfdfd',

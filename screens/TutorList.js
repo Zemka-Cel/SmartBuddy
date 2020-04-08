@@ -18,29 +18,27 @@ export default function TutorList() {
         marginTop: 15, }}>
 
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
-        <Text style={styles.editButtonText}>Algebra</Text> 
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Algebra</Text> 
         </TouchableOpacity> 
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
-        <Text style={styles.editButtonText}>Coding</Text> 
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Coding</Text> 
         </TouchableOpacity> 
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
-        <Text style={styles.editButtonText}>Filters</Text> 
+        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <Text style={styles.filterButtonsText}>Filters</Text> 
         </TouchableOpacity> 
         </View>
        
        </View>
  </View>
 
-        <View style={styles.categoriesContainer}>
-          <Text style={styles.categoriesText}>Categories</Text>
           
           
-        </View>
+      
       
       
 
@@ -82,6 +80,7 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 23,
+    marginBottom: 10,
     color: 'black',
     fontWeight: 'bold',
     textAlign: 'left',
@@ -184,16 +183,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
-  editButton: {
+  filterButtons: {
     padding: 3,
     backgroundColor: 'grey',
     borderColor: 'grey',
     borderRadius: 20,
     borderWidth: 1,
   },
-  editButtonText: {
+  filterButtonsText: {
     padding:5,
     paddingLeft: 20,
     paddingRight: 20,
   },
+
+  
 });
