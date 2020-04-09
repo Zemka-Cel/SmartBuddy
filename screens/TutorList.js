@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
 import { Input } from 'react-native-elements';
-
+import { TutorCard } from '../components/TutorCard';
 
 export default function TutorList() {
   return (
@@ -18,32 +18,29 @@ export default function TutorList() {
         marginTop: 15, }}>
 
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Algebra</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+            <Text style={styles.filterButtonsText}>Algebra</Text> 
+          </TouchableOpacity> 
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Coding</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+            <Text style={styles.filterButtonsText}>Coding</Text> 
+          </TouchableOpacity> 
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Filters</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+            <Text style={styles.filterButtonsText}>Filters</Text> 
+          </TouchableOpacity> 
         </View>
        
        </View>
- </View>
+      </View>
 
-          
-          
-      
-      
-      
+        <TutorCard name='Spock' description='Logical'></TutorCard>
+        <TutorCard name='Spock2' description='Logical 2'></TutorCard>
+        <TutorCard name='Spock3' description='Logical 3'></TutorCard>
 
-        
-        </ScrollView>
+      </ScrollView>
 
      
     </View>
