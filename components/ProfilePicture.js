@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Avatar } from 'react-native-elements';
 
 export function ProfilePicture(props) {
-  return  <Avatar 
+  return  (<Avatar 
   size="large" 
   rounded title="MT" 
   onPress={() => console.log("Works!")} 
-  activeOpacity={0.7} /> ;
+  activeOpacity={0.7} /> );
 }
