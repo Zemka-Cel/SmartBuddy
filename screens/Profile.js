@@ -5,6 +5,7 @@ import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { ProfilePicture } from '../components/ProfilePicture';
 import {Username} from '../components/Username';
+import { Biography } from '../components/Biography';
 
 export default function Profile() {
   return (
@@ -42,7 +43,9 @@ export default function Profile() {
        
        </View>
        
-       
+       <Biography 
+       description='Covjek hoce pare, daj mu pare.'
+       location='Sarajevo, BiH' university='SSST' cost='daj pare' />
 
 
       {/* <OptionButton
