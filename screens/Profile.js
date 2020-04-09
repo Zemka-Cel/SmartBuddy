@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   editButtonText: {
     fontSize: 17,
     color: 'grey',
-    fontWeight:500,
+    fontWeight:'500',
     padding: 5,
     paddingLeft: 20,
     paddingRight: 20,
