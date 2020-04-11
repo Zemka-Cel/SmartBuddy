@@ -6,9 +6,9 @@ import { image } from '../assets/images/spock.jpg';
 
 
 
-export default function TutorList() {
+export default function TutorList({navigation}) {
   const [tutors, setTutors] = React.useState([
-    {  imgSrc: require('../assets/images/profilePic.jpg'), name: 'Ime1', description: 'opis1' },
+    { imgSrc: require('../assets/images/profilePic.jpg'), name: 'Ime1', description: 'opis1' },
     { imgSrc: require('../assets/images/spock.jpg'), name: 'Ime2', description: 'opis2' },
     { imgSrc: require('../assets/images/profilePic.png'), name: 'Ime3', description: 'opis3' },
 
@@ -37,7 +37,7 @@ export default function TutorList() {
           </TouchableOpacity> 
         </View>
         <View>
-          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+              <TouchableOpacity onPress={() => navigation.navigate('Filters')} style={styles.filterButtons}> 
             <Text style={styles.filterButtonsText}>Filters</Text> 
           </TouchableOpacity> 
         </View>

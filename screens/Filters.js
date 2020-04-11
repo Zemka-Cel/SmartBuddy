@@ -228,15 +228,15 @@ const styles = StyleSheet.create({
   },
   filterButtons: {
     padding: 3,
-    backgroundColor: 'grey',
-    borderColor: 'grey',
+    backgroundColor: '#F3F3F3',
+    borderColor: '#F3F3F3',
     borderRadius: 20,
     borderWidth: 1,
   },
   filterButtonsText: {
     padding:5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
 
   
