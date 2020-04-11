@@ -13,6 +13,7 @@ export default function(containerRef) {
           Settings: 'settings',
           TutorList: 'tutors',
           PublicProfile: 'public-profile',
+          Filters: 'filters',
         },
       },
     },
