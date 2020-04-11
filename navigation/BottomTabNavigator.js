@@ -4,6 +4,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import Profile from '../screens/Profile';
 import TutorList from '../screens/TutorList';
+import PublicProfile from '../screens/PublicProfile';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -40,6 +41,14 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
+      <BottomTab.Screen
+        name="Public Profile"
+        component={PublicProfile}
+        options={{
+          title: 'Public Profile',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -52,7 +61,9 @@ function getHeaderTitle(route) {
       return 'Header to be added';
     case 'Profile':
       return 'Header to be added';
-      case 'Tutors':
+    case 'Tutors':
+      return 'Header to be added';
+    case 'Public Profile':
       return 'Header to be added';
   }
 }

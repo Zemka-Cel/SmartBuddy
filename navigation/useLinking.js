@@ -12,6 +12,7 @@ export default function(containerRef) {
           Profile: 'profile',
           Settings: 'settings',
           TutorList: 'tutors',
+          PublicProfile: 'public-profile',
         },
       },
     },
