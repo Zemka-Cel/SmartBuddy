@@ -2,14 +2,23 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
 import { Input } from 'react-native-elements';
 import { TutorCard } from '../components/TutorCard';
+import { image } from '../assets/images/spock.jpg';
+
+
 
 export default function TutorList() {
+  const [tutors, setTutors] = React.useState([
+    {  imgSrc: require('../assets/images/profilePic.jpg'), name: 'Ime1', description: 'opis1' },
+    { imgSrc: require('../assets/images/spock.jpg'), name: 'Ime2', description: 'opis2' },
+    { imgSrc: require('../assets/images/profilePic.png'), name: 'Ime3', description: 'opis3' },
+
+  ])
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>Tutors</Text>
-          <Input containerStyle={{backgroundColor:'#f5f5f0', borderRadius: 15}} placeholder='Search here...'/>
+          <Input containerStyle={{ backgroundColor:'#F3F3F3', borderRadius: 15}} placeholder='Search here...'/>
         
         <View style={{
         flex: 1,
@@ -36,9 +45,13 @@ export default function TutorList() {
        </View>
       </View>
 
-        <TutorCard name='Spock' description='Logical'></TutorCard>
+     {tutors.map((t) => (
+       <TutorCard image={t.imgSrc} name={t.name} description={t.description}></TutorCard>))}
+{/* 
+        <TutorCard  name='Spock' description='Logical'></TutorCard>
         <TutorCard name='Spock2' description='Logical 2'></TutorCard>
         <TutorCard name='Spock3' description='Logical 3'></TutorCard>
+         */}
 
       </ScrollView>
 
@@ -182,15 +195,15 @@ const styles = StyleSheet.create({
   },
   filterButtons: {
     padding: 3,
-    backgroundColor: 'grey',
-    borderColor: 'grey',
+    backgroundColor: '#F3F3F3',
+    borderColor: '#F3F3F3',
     borderRadius: 20,
     borderWidth: 1,
   },
   filterButtonsText: {
     padding:5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
 
   

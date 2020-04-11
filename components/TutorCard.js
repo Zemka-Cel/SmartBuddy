@@ -6,9 +6,7 @@ export function TutorCard(props) {
       <View style={styles.tutorCardContainer}>
           <Image 
             style={styles.tutorCardImage}
-            source={{
-                uri: 'https://www.jutarnji.hr/incoming/meme-spock.jpg/3528305/alternates/LANDSCAPE_780/meme-spock.jpg',
-            }}/>
+              source={props.image}/>  
             <View style={styles.textContainer}>
                 <Text style={styles.tutorCardName}>{props.name}</Text>
                 <Text style={styles.tutorCardDescription}>{props.description}</Text>
@@ -23,17 +21,20 @@ const styles = StyleSheet.create({
     tutorCardContainer: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#d3d3d3',
-        borderRadius: 20,
-        height: 100,
+        backgroundColor: '#F3F3F3',
+        borderRadius: 15,
+        height: 110,
         marginBottom: 12,
     },
     textContainer: {
         flex: 1,
         flexDirection: 'column',
-        padding: 3,
+        marginLeft:15,
+        
     },
     tutorCardImage:{
+        margin:5,
+        marginLeft:10,
         borderRadius: 20,
         height: 100,
         width: 100,
