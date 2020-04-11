@@ -74,5 +74,7 @@ function getHeaderTitle(route) {
       return 'Header to be added';
     case 'Public Profile':
       return 'Header to be added';
+    case 'Filters':
+      return 'Save filters';
   }
 }
