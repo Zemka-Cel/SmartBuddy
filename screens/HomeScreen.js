@@ -2,17 +2,14 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-import { MonoText } from '../components/StyledText';
-import { Assets } from '@react-navigation/stack';
-
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>Hi, user!</Text>
           <Text style={styles.welcomeDescription}>Connect with your future tutor.</Text>
-          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
+          <TouchableOpacity onPress={() => navigation.navigate('Tutors')} style={styles.tutorButton}>
             <Text style={styles.tutorButtonText}>Find your tutor</Text>
           </TouchableOpacity>
         </View>
