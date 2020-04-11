@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import Profile from '../screens/Profile';
 import TutorList from '../screens/TutorList';
 import PublicProfile from '../screens/PublicProfile';
+import Filters from '../screens/Filters';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -46,6 +47,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={PublicProfile}
         options={{
           title: 'Public Profile',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Filters"
+        component={Filters}
+        options={{
+          title: 'Filters',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
