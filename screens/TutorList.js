@@ -3,6 +3,7 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Scrol
 import { Input } from 'react-native-elements';
 import { TutorCard } from '../components/TutorCard';
 import { image } from '../assets/images/spock.jpg';
+import {Icon} from 'react-native-elements';
 
 
 
@@ -11,14 +12,21 @@ export default function TutorList({navigation}) {
     { imgSrc: require('../assets/images/profilePic.jpg'), name: 'Ime1', description: 'opis1' },
     { imgSrc: require('../assets/images/spock.jpg'), name: 'Ime2', description: 'opis2' },
     { imgSrc: require('../assets/images/profilePic.png'), name: 'Ime3', description: 'opis3' },
-
   ])
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>Tutors</Text>
-          <Input containerStyle={{ backgroundColor:'#F3F3F3', borderRadius: 15}} placeholder='Search here...'/>
+          <Input 
+            rightIcon={
+              <Icon
+                name='search'
+                size={24}
+                color='black'
+              />
+            }
+          containerStyle={{ backgroundColor:'#F3F3F3', borderRadius: 15}} placeholder='Search here...'/>
         
         <View style={{
         flex: 1,
@@ -47,11 +55,6 @@ export default function TutorList({navigation}) {
 
      {tutors.map((t) => (
        <TutorCard image={t.imgSrc} name={t.name} description={t.description}></TutorCard>))}
-{/* 
-        <TutorCard  name='Spock' description='Logical'></TutorCard>
-        <TutorCard name='Spock2' description='Logical 2'></TutorCard>
-        <TutorCard name='Spock3' description='Logical 3'></TutorCard>
-         */}
 
       </ScrollView>
 

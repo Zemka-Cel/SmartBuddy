@@ -15,7 +15,7 @@ export default function Profile() {
         <Username style={styles.userName}>Username</Username> 
         <Text style={styles.userEmail}>username@email.com</Text>
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
-        <Text style={styles.editButtonText}>EDIT</Text> 
+        <Text style={styles.editButtonText}>Edit</Text> 
         </TouchableOpacity> 
       </View>
 
@@ -88,7 +88,7 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: 'white',
   },
   contentContainer: {
     paddingTop: 15,
@@ -126,15 +126,15 @@ const styles = StyleSheet.create({
   filterButtons: {
     marginTop:20,
     padding: 3,
-    backgroundColor: 'grey',
-    borderColor: 'grey',
+    backgroundColor: '#f3f3f3',
+    borderColor: '#f3f3f3',
     borderRadius: 20,
     borderWidth: 1,
   },
   filterButtonsText: {
     padding:5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
   option: {
     backgroundColor: '#fdfdfd',

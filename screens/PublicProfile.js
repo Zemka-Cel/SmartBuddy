@@ -41,7 +41,9 @@ export default function Profile() {
        </View>
        
        <Biography 
-       description='Covjek hoce pare, daj mu pare.'
+        description='Covjek hoce pare, daj mu pare.
+         Username je studentica koja redovno kodira i radi na raznim projektima.
+          Zeli da nauci vise I da saradjuje sa svojim kolegima.'
        location='Sarajevo, BiH' university='SSST' cost='daj pare' />
 
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
@@ -89,7 +91,7 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: 'white',
   },
   contentContainer: {
     paddingTop: 15,
@@ -124,15 +126,15 @@ const styles = StyleSheet.create({
   filterButtons: {
     marginTop:10,
     padding: 3,
-    backgroundColor: 'grey',
-    borderColor: 'grey',
+    backgroundColor: '#f3f3f3',
+    borderColor: '#f3f3f3',
     borderRadius: 20,
     borderWidth: 1,
   },
   filterButtonsText: {
     padding:5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
   option: {
     backgroundColor: '#fdfdfd',
