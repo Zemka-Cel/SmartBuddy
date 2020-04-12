@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     iconRow: {
         flex: 1,
         flexDirection: 'row',
-        paddingBottom: 3,
+        paddingTop: 3,
     },
     bioDescription: {
         fontWeight: '200',
@@ -55,5 +55,6 @@ const styles = StyleSheet.create({
         fontWeight: '200',
         fontSize: 16,
         padding: 3,
+        paddingLeft: 5,
     },
 });

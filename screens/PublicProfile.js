@@ -43,7 +43,10 @@ export default function Profile() {
        <Biography 
         description='Covjek hoce pare, daj mu pare.
          Username je studentica koja redovno kodira i radi na raznim projektima.
-          Zeli da nauci vise I da saradjuje sa svojim kolegima.'
+          Zeli da nauci vise i vise i vise i vise i vise i vise i vise i vise
+          i vise i vise i vise i vise i vise
+          i vise i vise i vise i vise i vise
+          I da saradjuje sa svojim kolegima.'
        location='Sarajevo, BiH' university='SSST' cost='daj pare' />
 
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>

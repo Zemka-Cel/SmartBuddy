@@ -19,6 +19,7 @@ export default function TutorList({navigation}) {
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>Tutors</Text>
           <Input 
+            inputContainerStyle={{borderBottomWidth:0}}
             rightIcon={
               <Icon
                 name='search'
