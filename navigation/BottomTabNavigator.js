@@ -6,6 +6,8 @@ import Profile from '../screens/Profile';
 import TutorList from '../screens/TutorList';
 import PublicProfile from '../screens/PublicProfile';
 import Filters from '../screens/Filters';
+import SignUp from '../screens/SignUp';
+import Login from '../screens/Login';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -55,6 +57,22 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Filters}
         options={{
           title: 'Filters',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{
+          title: 'SignUp',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Login"
+        component={Login}
+        options={{
+          title: 'Login',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />

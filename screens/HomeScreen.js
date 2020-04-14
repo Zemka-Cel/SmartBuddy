@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -16,123 +16,87 @@ export default function HomeScreen({navigation}) {
 
         <View style={styles.categoriesContainer}>
           <Text style={styles.categoriesText}>Categories</Text>
+
           
-          {/* <Image
-            style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
-          />
-          <Image
-            style={styles.categoriesCard}
-            source={{
-              uri: 'https://miro.medium.com/max/3340/0*jmrpnXe-djmTh37l.',
-            }}
-          />
-          <Image
-            style={styles.categoriesCard}
-            source={{
-              uri: 'https://cdn.mos.cms.futurecdn.net/xYiTisbsp2HZPVupAZoNYQ-1024-80.jpg',
-            }}
-          /> */}
         </View>
+
+        <View style={{
+          flex: 1,
+          flexDirection: 'column',
+
+          justifyContent: 'space-between',
+        }}>
+
+          <View style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/math.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/coding.jpg')}
+              />
+            </View>
+
+          </View>
+          <View style={{ height: 20 }}></View>
+          <View style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/math.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/math.jpg')}
+              />
+            </View>
+
+          </View>
+          <View style={{ height: 20 }}></View>
+          <View style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/math.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/math.jpg')}
+              />
+            </View>
+
+          </View>
+        </View>
+
+     
+      </ScrollView>
+
       
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        
-        justifyContent: 'space-between', }}>
-          
-      <View style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between', }}>
-
-        <View>
-        <Image
-            style={styles.categoriesCard}        
-            source={ require('../assets/images/math.jpg')}
-          />  
-          </View>
-          <View>  
-        <Image
-            style={styles.categoriesCard}
-            source={ require('../assets/images/coding.jpg')}
-          />  
-          </View> 
-        
-        </View>
-        <View style={{height: 20}}></View>
-        <View style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between', }}>
-
-<View>
-        <Image
-            style={styles.categoriesCard}
-            source={ require('../assets/images/math.jpg')}
-          />  
-          </View>
-          <View>  
-        <Image
-            style={styles.categoriesCard}
-            source={ require('../assets/images/math.jpg')}
-          />  
-          </View> 
-        
-        </View>
-        <View style={{height: 20}}></View>
-        <View style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between', }}>
-
-<View>
-        <Image
-            style={styles.categoriesCard}
-            source={ require('../assets/images/math.jpg')}
-          />  
-          </View>
-          <View>  
-        <Image
-            style={styles.categoriesCard}
-            source={ require('../assets/images/math.jpg')}
-          />  
-          </View> 
-        
-        </View>
-      </View>
-
-        {/* <View style={styles.getStartedContainer}>
-          
-          <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change any of text, save the file, and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-          </TouchableOpacity>
-        </View> */}
-        </ScrollView>
-
-      {/* <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-        <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
-        </View>
-      </View> */}
     </View>
-    
+
   );
 }
 
@@ -204,7 +168,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'left',
     fontWeight: 'bold',
-    paddingBottom:10,
+    paddingBottom: 10,
 
   },
   welcomeDescription: {
@@ -227,15 +191,15 @@ const styles = StyleSheet.create({
   },
   categoriesContainer: {
     paddingTop: 10,
-    paddingBottom:10,
+    paddingBottom: 10,
   },
   categoriesCard: {
     borderRadius: 10,
     width: 150,
     height: 150,
-    resizeMode:'contain',
+    resizeMode: 'contain',
     flex: 1,
-    
+
   },
   getStartedContainer: {
     alignItems: 'center',
