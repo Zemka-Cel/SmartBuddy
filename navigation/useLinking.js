@@ -14,6 +14,7 @@ export default function(containerRef) {
           TutorList: 'tutors',
           PublicProfile: 'public-profile',
           Filters: 'filters',
+          EditProfile: 'edit-profile',
         },
       },
     },

@@ -8,6 +8,7 @@ import PublicProfile from '../screens/PublicProfile';
 import Filters from '../screens/Filters';
 import SignUp from '../screens/SignUp';
 import Login from '../screens/Login';
+import EditProfile from '../screens/EditProfile';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -76,6 +77,14 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
+      <BottomTab.Screen
+        name="EditProfile"
+        component={EditProfile}
+        options={{
+          title: 'EditProfile',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -94,5 +103,7 @@ function getHeaderTitle(route) {
       return 'Header to be added';
     case 'Filters':
       return 'Save filters';
+    case 'EditProfile':
+      return 'Save';
   }
 }
