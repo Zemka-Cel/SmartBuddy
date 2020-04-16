@@ -9,9 +9,10 @@ import Filters from '../screens/Filters';
 import SignUp from '../screens/SignUp';
 import Login from '../screens/Login';
 import EditProfile from '../screens/EditProfile';
+import StartScreen from '../screens/StartScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Home';
+const INITIAL_ROUTE_NAME = 'StartScreen';
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -49,7 +50,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Public Profile"
         component={PublicProfile}
         options={{
-          title: 'Public Profile',
+          title: 'PublicProfile',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
@@ -82,6 +83,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={EditProfile}
         options={{
           title: 'EditProfile',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="StartScreen"
+        component={StartScreen}
+        options={{
+          title: 'StartScreen',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />

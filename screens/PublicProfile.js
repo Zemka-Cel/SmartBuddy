@@ -20,7 +20,7 @@ export default function Profile() {
        
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 15, }}>
+        }}>
 
         <View>
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   filterButtons: {
-    marginTop:10,
     padding: 3,
     backgroundColor: '#f3f3f3',
     borderColor: '#f3f3f3',

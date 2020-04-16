@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         paddingTop: 3,
+        margin: 2,
     },
     bioDescription: {
         fontWeight: '200',

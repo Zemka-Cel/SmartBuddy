@@ -13,8 +13,11 @@ export default function(containerRef) {
           Settings: 'settings',
           TutorList: 'tutors',
           PublicProfile: 'public-profile',
+          SignUp: 'sign-up',
+          Login: 'login',
           Filters: 'filters',
           EditProfile: 'edit-profile',
+          StartScreen: 'start-screen'
         },
       },
     },
