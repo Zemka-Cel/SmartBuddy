@@ -9,6 +9,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
 
+import PublicProfile from './screens/PublicProfile';
+import Filters from './screens/Filters';
+import SignUp from './screens/SignUp';
+import Login from './screens/Login';
+
 
 const Stack = createStackNavigator();
 
@@ -53,9 +58,17 @@ export default function App(props) {
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="PublicProfile" component={PublicProfile} />
+            <Stack.Screen name="Filters" component={Filters} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="SignUp" component={SignUp} />
+
+
+
           </Stack.Navigator>
         </NavigationContainer>
       </View>
+
     );
   }
 }

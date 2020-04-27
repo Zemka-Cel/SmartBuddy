@@ -46,23 +46,23 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
-      <BottomTab.Screen
-        name="Public Profile"
+      {/* <BottomTab.Screen
+        name="PublicProfile"
         component={PublicProfile}
         options={{
           title: 'PublicProfile',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      />
-      <BottomTab.Screen
+      /> */}
+      {/* <BottomTab.Screen
         name="Filters"
         component={Filters}
         options={{
           title: 'Filters',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      />
-      <BottomTab.Screen
+      /> */}
+      {/* <BottomTab.Screen
         name="SignUp"
         component={SignUp}
         options={{
@@ -77,7 +77,7 @@ export default function BottomTabNavigator({ navigation, route }) {
           title: 'Login',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      />
+      /> */}
       <BottomTab.Screen
         name="EditProfile"
         component={EditProfile}

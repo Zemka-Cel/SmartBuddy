@@ -4,21 +4,29 @@ import { Input } from 'react-native-elements';
 import { TutorCard } from '../components/TutorCard';
 import { image } from '../assets/images/spock.jpg';
 import {Icon} from 'react-native-elements';
+import { tutorsList } from '../tutors';
+
 
 
 
 export default function TutorList({navigation}) {
-  const [tutors, setTutors] = React.useState([
-    { imgSrc: require('../assets/images/profilePic.jpg'), name: 'Ime1', description: 'opis1' },
-    { imgSrc: require('../assets/images/spock.jpg'), name: 'Ime2', description: 'opis2' },
-    { imgSrc: require('../assets/images/profilePic.png'), name: 'Ime3', description: 'opis3' },
-  ])
+  const [tutors, setTutors] = React.useState(tutorsList);
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>Tutors</Text>
           <Input 
+            onChange={(e) => {
+              if (e.nativeEvent.text === "") {
+                setTutors(tutorsList);
+              } else {
+                setTutors(
+                  tutorsList.filter((t) => t.name === e.nativeEvent.text)
+                );
+              }
+            }}
             inputContainerStyle={{borderBottomWidth:0}}
             rightIcon={
               <Icon
@@ -26,6 +34,7 @@ export default function TutorList({navigation}) {
                 size={24}
                 color='black'
               />
+
             }
           containerStyle={{ backgroundColor:'#F3F3F3', borderRadius: 15}} placeholder='Search here...'/>
         
@@ -54,8 +63,22 @@ export default function TutorList({navigation}) {
        </View>
       </View>
 
+
      {tutors.map((t) => (
-       <TutorCard image={t.imgSrc} name={t.name} description={t.description}></TutorCard>))}
+       <TouchableOpacity onPress={() => {
+         navigation.navigate('PublicProfile', { 
+           name: t.name,
+           email: t.email,
+           bio: t.bio,
+           price: t.price,
+           faculty: t.faculty,
+           location: t.location,
+         })
+       }}>
+        
+       <TutorCard image={t.imgSrc} name={t.name} description={t.description}></TutorCard>
+       </TouchableOpacity>
+       ))}
 
       </ScrollView>
 

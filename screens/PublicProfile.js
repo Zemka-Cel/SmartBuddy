@@ -7,13 +7,22 @@ import { ProfilePicture } from '../components/ProfilePicture';
 import {Username} from '../components/Username';
 import { Biography } from '../components/Biography';
 
-export default function Profile() {
+export default function PublicProfile({route, navigation}) {
+  const { name } = route.params;
+  const { email } = route.params;
+  const { price } = route.params;
+  const { bio } = route.params;
+  const { faculty } = route.params;
+  const { location } = route.params;
+
+
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={{flex:1, alignItems: 'center'}}> 
         <ProfilePicture></ProfilePicture>
-        <Username style={styles.userName}>Username</Username> 
-        <Text style={styles.userEmail}>username@email.com</Text>
+        <Username style={styles.userName}>{JSON.stringify(name)}</Username> 
+        <Text style={styles.userEmail}>{JSON.stringify(email)}</Text>
       </View>
 
       <View style={{
@@ -41,55 +50,22 @@ export default function Profile() {
        </View>
        
        <Biography 
-        description='Covjek hoce pare, daj mu pare.
-         Username je studentica koja redovno kodira i radi na raznim projektima.
-          Zeli da nauci vise i vise i vise i vise i vise i vise i vise i vise
-          i vise i vise i vise i vise i vise
-          i vise i vise i vise i vise i vise
-          I da saradjuje sa svojim kolegima.'
-       location='Sarajevo, BiH' university='SSST' cost='daj pare' />
+        description={JSON.stringify(bio)}
+        location={JSON.stringify(location)} university={JSON.stringify(faculty)} cost={JSON.stringify(price)} />
 
         <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
             <Text style={styles.tutorButtonText}>Contact tutor</Text>
         </TouchableOpacity>
 
 
-      {/* <OptionButton
-        icon="md-school"
-        label="Read the Expo documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
-      />
-
-      <OptionButton
-        icon="md-compass"
-        label="Read the React Navigation documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
-      />
-
-      <OptionButton
-        icon="ios-chatboxes"
-        label="Ask a question on the forums"
-        onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
-        isLastOption
-      /> */}
+  
     </ScrollView>
   );
 }
 
-function OptionButton({ icon, label, onPress, isLastOption }) {
-  return (
-    <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
-      <View style={{ flexDirection: 'row' }}>
-        <View style={styles.optionIconContainer}>
-          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
-        </View>
-        <View style={styles.optionTextContainer}>
-          <Text style={styles.optionText}>{label}</Text>
-        </View>
-      </View>
-    </RectButton>
-  );
-}
+PublicProfile.navigationOptions = {
+  header: null,
+};
 
 const styles = StyleSheet.create({
   container: {
