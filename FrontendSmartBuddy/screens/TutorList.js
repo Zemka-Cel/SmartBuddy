@@ -40,11 +40,11 @@ export default function TutorList({navigation}) {
           <Text style={styles.welcomeText}>Tutors</Text>
           <Input 
             onChange={(e) => {
-              if (e.nativeEvent.text === "") {
-                setTutors(tutorsList);
+              if (e.nativeEvent.text === '') {
+                setTutors(tutors);
               } else {
                 setTutors(
-                  tutorsList.filter((t) => t.name === e.nativeEvent.text)
+                  tutors.filter((t) => t.id === e.nativeEvent.text)
                 );
               }
             }}
