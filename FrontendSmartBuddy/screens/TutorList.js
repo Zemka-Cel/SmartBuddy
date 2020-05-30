@@ -4,15 +4,36 @@ import { Input } from 'react-native-elements';
 import { TutorCard } from '../components/TutorCard';
 import { image } from '../assets/images/spock.jpg';
 import {Icon} from 'react-native-elements';
-import { tutorsList } from '../tutors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
 
 export default function TutorList({navigation}) {
-  const [tutors, setTutors] = React.useState(tutorsList);
+  const [isLoading, setLoading] = React.useState([]);
+  const [tutors, setTutors] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3000/dev/tutors')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return responseJson.tutors;
+      })
+      .then(tutors => {
+        setTutors(tutors);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+      .finally(() => setLoading(false));
+
+  }, []);
+
+
 
   return (
+    <SafeAreaView>
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
@@ -84,6 +105,7 @@ export default function TutorList({navigation}) {
 
      
     </View>
+    </SafeAreaView>
     
   );
 }
