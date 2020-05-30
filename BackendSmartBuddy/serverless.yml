@@ -71,6 +71,12 @@ functions:
      - http:
          path: tutors/{id}
          method: get
+  users-get-by-id:
+    handler: functions/users-get-by-id.users
+    events:
+     - http:
+         path: users/{id}
+         method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

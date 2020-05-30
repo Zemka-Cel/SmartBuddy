@@ -1,5 +1,5 @@
 'use strict';
-const data = require("../data/tutors");
+const tutors = require("../data/tutors");
 
 module.exports.tutors = async event => {
     return {
@@ -7,10 +7,7 @@ module.exports.tutors = async event => {
         body: JSON.stringify(
             {
                 message: "Go Serverless v1.0! Your function executed successfully!",
-                data: data.tutors.map((p) => ({
-                   Name: p.name,
-                   Id: p.id,
-                    })),
+                tutors: tutors.tutors,
             }),
     };
 
