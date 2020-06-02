@@ -16,7 +16,7 @@ export default function(containerRef) {
           SignUp: 'sign-up',
           Login: 'login',
           Filters: 'filters',
-          EditProfile: 'edit-profile',
+          EditProfile: 'EditProfile',
           StartScreen: 'start-screen'
         },
       },

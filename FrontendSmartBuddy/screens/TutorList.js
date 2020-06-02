@@ -94,6 +94,7 @@ export default function TutorList({navigation}) {
            price: t.price,
            faculty: t.faculty,
            location: t.location,
+           image: t.imgSrc
          })
        }}>
         

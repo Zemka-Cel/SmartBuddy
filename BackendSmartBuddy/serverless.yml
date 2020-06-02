@@ -77,6 +77,12 @@ functions:
      - http:
          path: users/{id}
          method: get
+  users-post-by-id:
+    handler: functions/users-post-by-id.users
+    events:
+     - http:
+         path: users/{id}
+         method: post
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

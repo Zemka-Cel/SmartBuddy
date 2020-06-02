@@ -27,7 +27,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={HomeScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
         }}
       />
        <BottomTab.Screen
@@ -35,7 +35,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={TutorList}
         options={{
           title: 'Tutors',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-people" />,
         }}
       />
       <BottomTab.Screen
@@ -43,7 +43,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Profile}
         options={{
           title: 'Profile',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" />,
         }}
       />
       {/* <BottomTab.Screen
@@ -78,22 +78,15 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       /> */}
-      <BottomTab.Screen
-        name="EditProfile"
-        component={EditProfile}
-        options={{
-          title: 'EditProfile',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
-        }}
-      />
-      <BottomTab.Screen
+     
+      {/* <BottomTab.Screen
         name="StartScreen"
         component={StartScreen}
         options={{
           title: 'StartScreen',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }
@@ -102,14 +95,7 @@ function getHeaderTitle(route) {
   const routeName = route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
 
   switch (routeName) {
-    case 'Home':
-      return 'Header to be added';
-    case 'Profile':
-      return 'Header to be added';
-    case 'Tutors':
-      return 'Header to be added';
-    case 'Public Profile':
-      return 'Header to be added';
+
     case 'Filters':
       return 'Save filters';
     case 'EditProfile':

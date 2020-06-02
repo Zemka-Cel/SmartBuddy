@@ -14,14 +14,17 @@ export default function PublicProfile({route, navigation}) {
   const { bio } = route.params;
   const { faculty } = route.params;
   const { location } = route.params;
-
+  const { image } = route.params;
 
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={{flex:1, alignItems: 'center'}}> 
-        <ProfilePicture></ProfilePicture>
-        <Username style={styles.userName}>{JSON.stringify(name)}</Username> 
+          {/* <Image
+            style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 4 }}
+            source={JSON.stringify(image)}
+          />   */}
+         <Username style={styles.userName}>{JSON.stringify(name)}</Username> 
         <Text style={styles.userEmail}>{JSON.stringify(email)}</Text>
       </View>
 

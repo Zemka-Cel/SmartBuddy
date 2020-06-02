@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
@@ -7,14 +7,43 @@ import { ProfilePicture } from '../components/ProfilePicture';
 import {Username} from '../components/Username';
 import { Biography } from '../components/Biography';
 
-export default function Profile() {
+export default function Profile({navigation}) {
+
+  const [isLoading, setLoading] = React.useState([]);
+  const [users, setUsers] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3000/dev/users/1')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return responseJson.users;
+      })
+      .then(users => {
+        setUsers(users);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+      .finally(() => setLoading(false));
+
+  }, []);
+
+
+
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      {users.map((u)=> (
+        <View>
       <View style={{flex:1, alignItems: 'center'}}> 
-        <ProfilePicture></ProfilePicture>
-        <Username style={styles.userName}>Username</Username> 
-        <Text style={styles.userEmail}>username@email.com</Text>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.editButton}> 
+            <Image
+              style={{width:100, height: 100, borderRadius: 50, marginBottom: 4}}
+              source={u.imgSrc}
+            />
+        <Username style={styles.userName}>{u.name}</Username> 
+        <Text style={styles.userEmail}>{u.email}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('EditProfile')} style={styles.editButton}> 
         <Text style={styles.editButtonText}>Edit</Text> 
         </TouchableOpacity> 
       </View>
@@ -22,31 +51,28 @@ export default function Profile() {
       <View style={{
        
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         marginTop: 15, }}>
 
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <TouchableOpacity style={styles.filterButtons}> 
         <Text style={styles.filterButtonsText}>Algebra</Text> 
         </TouchableOpacity> 
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
+        <TouchableOpacity style={styles.filterButtons}> 
         <Text style={styles.filterButtonsText}>Coding</Text> 
         </TouchableOpacity> 
         </View>
-        <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Filters</Text> 
-        </TouchableOpacity> 
-        </View>
+       
        
        </View>
        
        <Biography 
-       description='Covjek hoce pare, daj mu pare.'
-       location='Sarajevo, BiH' university='SSST' cost='daj pare' />
-
+       description={u.bio}
+       location={u.location} university={u.faculty} cost={u.price} />
+        </View>
+      ))}
 
       {/* <OptionButton
         icon="md-school"

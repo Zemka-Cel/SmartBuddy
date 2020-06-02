@@ -34,37 +34,22 @@ export default function HomeScreen({ navigation }) {
           }}>
 
             <View>
+              <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/math.jpg')}
+                source={require('../assets/images/math.png')}
               />
+              <Text style={styles.textCenter}>Math</Text>
+              </TouchableOpacity>
             </View>
             <View>
+              <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/coding.jpg')}
+                source={require('../assets/images/coding.png')}
               />
-            </View>
-
-          </View>
-          <View style={{ height: 20 }}></View>
-          <View style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-
-            <View>
-              <Image
-                style={styles.categoriesCard}
-                source={require('../assets/images/math.jpg')}
-              />
-            </View>
-            <View>
-              <Image
-                style={styles.categoriesCard}
-                source={require('../assets/images/math.jpg')}
-              />
+              <Text style={styles.textCenter}>Coding</Text>
+              </TouchableOpacity>
             </View>
 
           </View>
@@ -76,16 +61,49 @@ export default function HomeScreen({ navigation }) {
           }}>
 
             <View>
+              <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/math.jpg')}
+                source={require('../assets/images/engineering.png')}
               />
+              <Text style={styles.textCenter}>Engineering</Text>
+              </TouchableOpacity>
             </View>
             <View>
+              <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/math.jpg')}
+                source={require('../assets/images/science.png')}
               />
+              <Text style={styles.textCenter}>Science</Text>
+              </TouchableOpacity>
+            </View>
+
+          </View>
+          <View style={{ height: 20 }}></View>
+          <View style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+
+            <View>
+<TouchableOpacity>
+       <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/chemistry.png')}
+              />
+              <Text style={styles.textCenter}>Chemistry</Text>
+              </TouchableOpacity>        
+            </View>
+            <View>
+              <TouchableOpacity>
+              <Image
+                style={styles.categoriesCard}
+                source={require('../assets/images/physics.png')}
+              />
+              <Text style={styles.textCenter}>Physics</Text>
+              </TouchableOpacity>
             </View>
 
           </View>
@@ -142,6 +160,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  textCenter: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    textAlign: 'center',
+  },
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',
@@ -195,8 +218,8 @@ const styles = StyleSheet.create({
   },
   categoriesCard: {
     borderRadius: 10,
-    width: 150,
-    height: 150,
+    width: 155,
+    height: 155,
     resizeMode: 'contain',
     flex: 1,
 
