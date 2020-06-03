@@ -37,7 +37,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/math.png')}
+                source={require('../assets/images/math.svg')}
               />
                             </TouchableOpacity>
             </View>
@@ -45,7 +45,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/coding.png')}
+                source={require('../assets/images/coding.svg')}
               />
               
               </TouchableOpacity>
@@ -63,7 +63,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/painting.png')}
+                source={require('../assets/images/painting.svg')}
               />
               
               </TouchableOpacity>
@@ -72,7 +72,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/English.png')}
+                source={require('../assets/images/English.svg')}
               />
               
               </TouchableOpacity>
@@ -90,7 +90,7 @@ export default function HomeScreen({ navigation }) {
 <TouchableOpacity>
        <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/chemistry.png')}
+                source={require('../assets/images/chemistry.svg')}
               />
               </TouchableOpacity>        
             </View>
@@ -98,7 +98,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/physics.png')}
+                source={require('../assets/images/physics.svg')}
               />
               </TouchableOpacity>
             </View>
