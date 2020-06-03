@@ -42,7 +42,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Profile"
         component={Profile}
         options={{
-          title: 'Profile',
+          title: 'My Profile',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" />,
         }}
       />
@@ -79,14 +79,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       /> */}
      
-      {/* <BottomTab.Screen
+      <BottomTab.Screen
         name="StartScreen"
         component={StartScreen}
         options={{
           title: 'StartScreen',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      /> */}
+      />
     </BottomTab.Navigator>
   );
 }

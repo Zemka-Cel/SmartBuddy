@@ -33,6 +33,7 @@ export default function TutorList({navigation}) {
 
 
   return (
+    <ScrollView>
     <SafeAreaView>
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -107,6 +108,7 @@ export default function TutorList({navigation}) {
      
     </View>
     </SafeAreaView>
+    </ScrollView>
     
   );
 }

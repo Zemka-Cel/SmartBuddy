@@ -15,6 +15,7 @@ export default function PublicProfile({route, navigation}) {
   const { faculty } = route.params;
   const { location } = route.params;
   const { image } = route.params;
+  
 
 
   return (
