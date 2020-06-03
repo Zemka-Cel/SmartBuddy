@@ -1,68 +1,64 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { ProfilePicture } from '../components/ProfilePicture';
-import {Username} from '../components/Username';
+import { Username } from '../components/Username';
 import { Biography } from '../components/Biography';
 
-export default function PublicProfile({route, navigation}) {
-  const { name } = route.params;
-  const { email } = route.params;
-  const { price } = route.params;
-  const { bio } = route.params;
-  const { faculty } = route.params;
-  const { location } = route.params;
-  const { image } = route.params;
+export default function PublicProfile({ route, navigation }) {
+  const { name = " ", email, price, bio, faculty, location, image } = route.params;
+
   
+
 
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <View style={{flex:1, alignItems: 'center'}}> 
-          {/* <Image
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        <Image
             style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 4 }}
-            source={JSON.stringify(image)}
-          />   */}
-         <Username style={styles.userName}>{JSON.stringify(name)}</Username> 
-        <Text style={styles.userEmail}>{JSON.stringify(email)}</Text>
+            source={image}
+          />  
+        <Username style={styles.userName}>{name||" "}</Username>
+        <Text style={styles.userEmail}>{email}</Text>
       </View>
 
       <View style={{
-       
+
         flexDirection: 'row',
         justifyContent: 'space-between',
-        }}>
+      }}>
 
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Algebra</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
+            <Text style={styles.filterButtonsText}>Algebra</Text>
+          </TouchableOpacity>
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Coding</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
+            <Text style={styles.filterButtonsText}>Coding</Text>
+          </TouchableOpacity>
         </View>
         <View>
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Filters</Text> 
-        </TouchableOpacity> 
+          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
+            <Text style={styles.filterButtonsText}>Filters</Text>
+          </TouchableOpacity>
         </View>
-       
-       </View>
-       
-       <Biography 
-        description={JSON.stringify(bio)}
-        location={JSON.stringify(location)} university={JSON.stringify(faculty)} cost={JSON.stringify(price)} />
 
-        <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
-            <Text style={styles.tutorButtonText}>Contact tutor</Text>
-        </TouchableOpacity>
+      </View>
+
+      <Biography
+        description={bio}
+        location={location} university={faculty} cost={price} />
+
+      <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
+        <Text style={styles.tutorButtonText}>Contact tutor</Text>
+      </TouchableOpacity>
 
 
-  
+
     </ScrollView>
   );
 }
@@ -78,7 +74,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 15,
-    padding:20,
+    padding: 20,
   },
   optionIconContainer: {
     marginRight: 12,
@@ -114,7 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   filterButtonsText: {
-    padding:5,
+    padding: 5,
     paddingLeft: 25,
     paddingRight: 25,
   },
