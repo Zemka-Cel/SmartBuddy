@@ -70,7 +70,7 @@ PublicProfile.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   contentContainer: {
     paddingTop: 15,
@@ -81,31 +81,31 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 23,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     padding: 2,
   },
   userEmail: {
     fontSize: 17,
-    fontWeight: '100',
+    fontWeight: "100",
     padding: 5,
   },
   tutorButton: {
-    backgroundColor: 'rgba(255,71,105, 1)',
-    alignItems: 'stretch',
+    backgroundColor: "#3D90CE",
+    alignItems: "stretch",
     borderRadius: 10,
     marginTop: 35,
   },
   tutorButtonText: {
     fontSize: 17,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
     padding: 15,
   },
   filterButtons: {
     padding: 3,
-    backgroundColor: '#f3f3f3',
-    borderColor: '#f3f3f3',
+    backgroundColor: "#f3f3f3",
+    borderColor: "#f3f3f3",
     borderRadius: 20,
     borderWidth: 1,
   },
@@ -115,19 +115,19 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
   option: {
-    backgroundColor: '#fdfdfd',
+    backgroundColor: "#fdfdfd",
     paddingHorizontal: 15,
     paddingVertical: 15,
     borderWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: 0,
-    borderColor: '#ededed',
+    borderColor: "#ededed",
   },
   lastOption: {
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   optionText: {
     fontSize: 15,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     marginTop: 1,
   },
 });

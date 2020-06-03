@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, ScrollView} from 'react-native';
 import { Input } from 'react-native-elements';
 import { TutorCard } from '../components/TutorCard';
-import { image } from '../assets/images/spock.jpg';
 import {Icon} from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

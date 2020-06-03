@@ -39,8 +39,7 @@ export default function HomeScreen({ navigation }) {
                 style={styles.categoriesCard}
                 source={require('../assets/images/math.png')}
               />
-              <Text style={styles.textCenter}>Math</Text>
-              </TouchableOpacity>
+                            </TouchableOpacity>
             </View>
             <View>
               <TouchableOpacity>
@@ -48,7 +47,7 @@ export default function HomeScreen({ navigation }) {
                 style={styles.categoriesCard}
                 source={require('../assets/images/coding.png')}
               />
-              <Text style={styles.textCenter}>Coding</Text>
+              
               </TouchableOpacity>
             </View>
 
@@ -64,18 +63,18 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/engineering.png')}
+                source={require('../assets/images/painting.png')}
               />
-              <Text style={styles.textCenter}>Engineering</Text>
+              
               </TouchableOpacity>
             </View>
             <View>
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/science.png')}
+                source={require('../assets/images/English.png')}
               />
-              <Text style={styles.textCenter}>Science</Text>
+              
               </TouchableOpacity>
             </View>
 
@@ -93,7 +92,6 @@ export default function HomeScreen({ navigation }) {
                 style={styles.categoriesCard}
                 source={require('../assets/images/chemistry.png')}
               />
-              <Text style={styles.textCenter}>Chemistry</Text>
               </TouchableOpacity>        
             </View>
             <View>
@@ -102,7 +100,6 @@ export default function HomeScreen({ navigation }) {
                 style={styles.categoriesCard}
                 source={require('../assets/images/physics.png')}
               />
-              <Text style={styles.textCenter}>Physics</Text>
               </TouchableOpacity>
             </View>
 
@@ -158,58 +155,57 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   textCenter: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
+    color: "rgba(96,100,109, 1)",
+    textAlign: "center",
   },
   developmentModeText: {
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
+    color: "rgba(0,0,0,0.4)",
     fontSize: 14,
     lineHeight: 19,
-    textAlign: 'center',
+    textAlign: "center",
   },
   contentContainer: {
     padding: 20,
-    justifyContent: 'space-evenly',
+    justifyContent: "space-evenly",
   },
   welcomeContainer: {
-    alignItems: 'stretch',
+    alignItems: "stretch",
     marginBottom: 20,
   },
   welcomeText: {
     fontSize: 23,
-    color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'left',
+    color: "black",
+    fontWeight: "bold",
+    textAlign: "left",
   },
   categoriesText: {
     fontSize: 23,
-    color: 'black',
-    textAlign: 'left',
-    fontWeight: 'bold',
+    color: "black",
+    textAlign: "left",
+    fontWeight: "bold",
     paddingBottom: 10,
-
   },
   welcomeDescription: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'left',
+    color: "rgba(96,100,109, 1)",
+    textAlign: "left",
   },
   tutorButton: {
-    backgroundColor: 'rgba(255,71,105, 1)',
-    alignItems: 'stretch',
+    backgroundColor: "#3D90CE",
+    alignItems: "stretch",
     borderRadius: 10,
     marginTop: 5,
   },
   tutorButtonText: {
     fontSize: 17,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
     padding: 15,
   },
   categoriesContainer: {
@@ -219,40 +215,39 @@ const styles = StyleSheet.create({
   categoriesCard: {
     borderRadius: 10,
     width: 155,
-    height: 155,
-    resizeMode: 'contain',
+    height: 190,
+    resizeMode: "contain",
     flex: 1,
-
   },
   getStartedContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 50,
   },
   homeScreenFilename: {
     marginVertical: 7,
   },
   codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+    color: "rgba(96,100,109, 0.8)",
   },
   codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: "rgba(0,0,0,0.05)",
     borderRadius: 3,
     paddingHorizontal: 4,
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: "rgba(96,100,109, 1)",
     lineHeight: 24,
-    textAlign: 'left',
+    textAlign: "left",
   },
   tabBarInfoContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
+        shadowColor: "black",
         shadowOffset: { width: 0, height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,
@@ -261,27 +256,27 @@ const styles = StyleSheet.create({
         elevation: 20,
       },
     }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
+    alignItems: "center",
+    backgroundColor: "#fbfbfb",
     paddingVertical: 20,
   },
   tabBarInfoText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
+    color: "rgba(96,100,109, 1)",
+    textAlign: "center",
   },
   navigationFilename: {
     marginTop: 5,
   },
   helpContainer: {
     marginTop: 15,
-    alignItems: 'center',
+    alignItems: "center",
   },
   helpLink: {
     paddingVertical: 15,
   },
   helpLinkText: {
     fontSize: 14,
-    color: '#2e78b7',
+    color: "#2e78b7",
   },
 });

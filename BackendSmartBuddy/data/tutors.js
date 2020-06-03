@@ -22,7 +22,7 @@ module.exports = {
             faculty: 'Sarajevo School of Science and Technology',
             price: '10 BAM/h',
             bio: 'neka biografijaaaaaaa',
-            zanimanje: ['coding', ]
+            // zanimanje: ['coding', ]
             email: 'ajla.hajdarevic@stu.ssst.edu.ba',
 
         },
