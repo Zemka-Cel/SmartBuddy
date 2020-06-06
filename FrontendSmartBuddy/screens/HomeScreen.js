@@ -45,7 +45,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/coding.svg')}
+                source={require('../assets/images/Coding.svg')}
               />
               
               </TouchableOpacity>
@@ -63,7 +63,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity>
               <Image
                 style={styles.categoriesCard}
-                source={require('../assets/images/painting.svg')}
+                source={require('../assets/images/Painting.svg')}
               />
               
               </TouchableOpacity>

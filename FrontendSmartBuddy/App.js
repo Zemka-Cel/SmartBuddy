@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View} from 'react-native';
 import { SplashScreen } from 'expo';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,6 +14,9 @@ import Filters from './screens/Filters';
 import SignUp from './screens/SignUp';
 import Login from './screens/Login';
 import EditProfile from './screens/EditProfile';
+import { Button } from 'react-native-elements';
+
+
 
 
 const Stack = createStackNavigator();
@@ -67,16 +70,33 @@ export default function App(props) {
         </ScrollView> */}
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
             <Stack.Screen name="PublicProfile" component={PublicProfile} />
-            <Stack.Screen name="Filters" component={Filters} />
-            <Stack.Screen name="EditProfile" component={EditProfile}/>
+            <Stack.Screen name="Filters" component={Filters} options={({ navigation }) => ({
+                headerShown: true,
+                headerTitle: " ",
+                headerLeft: () => (
+                  <Button 
+                  type="clear"
+                  buttonStyle={{color: "black"}}                  
+                  title="Back" 
+                  onPress={() => navigation.goBack()}/>
+                ),
+            })} />
+            <Stack.Screen name="EditProfile" component={EditProfile} options={({ navigation }) => ({
+                headerShown: true,
+                headerTitle: " ",
+                headerLeft: () => (
+                  <Button 
+                  type="clear"
+                  buttonStyle={{color: "black"}}
+                  title="Back" 
+                  onPress={() => navigation.goBack()}/>
+                ),
+            })}/>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="SignUp" component={SignUp} />
-
-
-
           </Stack.Navigator>
         </NavigationContainer>
       </View>
@@ -125,6 +145,9 @@ const styles = StyleSheet.create({
       color: 'white',
       textAlign: 'center',
       padding: 15,
+    },
+    backButton: {
+      color: 'black',
     },
     getStartedContainer: {
       alignItems: 'center',

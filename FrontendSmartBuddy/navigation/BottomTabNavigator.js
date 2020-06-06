@@ -21,7 +21,7 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator>
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
@@ -96,9 +96,7 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
 
-    case 'Filters':
-      return 'Save filters';
-    case 'EditProfile':
-      return 'Save';
+    default:
+      return ' ';
   }
 }

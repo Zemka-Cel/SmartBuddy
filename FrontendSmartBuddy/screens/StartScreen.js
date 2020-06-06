@@ -5,7 +5,14 @@ export default function StartScreen({ navigation }) {
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <View style={styles.welcomeContainer}>
+            <View style={{flex:1, alignItems: 'center'}}>
+                <Image
+                  style={styles.logo}
+                  source={require('../assets/images/sbl.png')}
+                />
+                <Text style={styles.welcomeDescription}>To connect with your future tutor, please <b>sign in</b>.</Text>
+            </View>
+            <View style={styles.welcomeContainer}> 
                 <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.SignIn}>
                     <Text style={styles.SignInText}>Sign in</Text>
                 </TouchableOpacity>
@@ -36,12 +43,22 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 23,
     marginTop: 120,
-
     marginBottom: 40,
     marginLeft: 10,
     color: "black",
     fontWeight: "bold",
     textAlign: "left",
+  },
+  welcomeDescription: {
+    fontSize: 17,
+    color: "rgba(96,100,109, 1)",
+    textAlign: "center",
+  },
+  logo: {
+    width: 400,
+    height: 400,
+    resizeMode: "contain",
+    flex: 1,
   },
   SignIn: {
     backgroundColor: "#3D90CE",
