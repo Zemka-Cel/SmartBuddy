@@ -72,7 +72,17 @@ export default function App(props) {
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
-            <Stack.Screen name="PublicProfile" component={PublicProfile} />
+            <Stack.Screen name="PublicProfile" component={PublicProfile} options={({ navigation }) => ({
+                headerShown: true,
+                headerTitle: " ",
+                headerLeft: () => (
+                  <Button 
+                  type="clear"
+                  buttonStyle={{color: "black"}}  /* buttonstyle doesn't work  */                
+                  title="Back" 
+                  onPress={() => navigation.goBack()}/>
+                ),
+            })}/>
             <Stack.Screen name="Filters" component={Filters} options={({ navigation }) => ({
                 headerShown: true,
                 headerTitle: " ",
