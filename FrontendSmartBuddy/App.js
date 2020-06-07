@@ -78,7 +78,7 @@ export default function App(props) {
                 headerLeft: () => (
                   <Button 
                   type="clear"
-                  buttonStyle={{color: "black"}}  /* buttonstyle doesn't work  */                
+                  style={{marginLeft: 10, color: 'black',}}  /* buttonstyle doesn't work  */                
                   title="Back" 
                   onPress={() => navigation.goBack()}/>
                 ),
@@ -89,7 +89,7 @@ export default function App(props) {
                 headerLeft: () => (
                   <Button 
                   type="clear"
-                  buttonStyle={{color: "black"}}                  
+                  buttonStyle={{marginLeft: 10, color: "black"}}                  
                   title="Back" 
                   onPress={() => navigation.goBack()}/>
                 ),
@@ -100,7 +100,7 @@ export default function App(props) {
                 headerLeft: () => (
                   <Button 
                   type="clear"
-                  buttonStyle={{color: "black"}}
+                  buttonStyle={{marginLeft: 10, color: "black"}}
                   title="Back" 
                   onPress={() => navigation.goBack()}/>
                 ),

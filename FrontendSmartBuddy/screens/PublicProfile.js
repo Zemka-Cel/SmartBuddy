@@ -1,64 +1,91 @@
-import * as React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
-import { ProfilePicture } from '../components/ProfilePicture';
-import { Username } from '../components/Username';
-import { Biography } from '../components/Biography';
+import * as React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Alert,
+  Image,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import * as WebBrowser from "expo-web-browser";
+import { RectButton, ScrollView } from "react-native-gesture-handler";
+import { ProfilePicture } from "../components/ProfilePicture";
+import { Username } from "../components/Username";
+import { Biography } from "../components/Biography";
 
 export default function PublicProfile({ route, navigation }) {
-  const { name = " ", email, price, bio, faculty, location, image } = route.params;
-
-  
-
-
+  const {
+    name = " ",
+    email,
+    price,
+    bio,
+    faculty,
+    location,
+    image,
+  } = route.params;
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <View style={{ flex: 1, alignItems: 'center' }}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
+      <View>
+      <View style={{ flex: 1, alignItems: "center", }}>
         <Image
-            style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 4 }}
-            source={image}
-          />  
-        <Username style={styles.userName}>{name||" "}</Username>
+          style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 4 }}
+          source={image}
+        />
+        <Username style={styles.userName}>{name || " "}</Username>
         <Text style={styles.userEmail}>{email}</Text>
       </View>
 
-      <View style={{
-
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      }}>
-
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
         <View>
-          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
-            <Text style={styles.filterButtonsText}>Algebra</Text>
+          <TouchableOpacity
+            onPress={() => Alert.alert("Hvala :D")}
+            style={styles.filterButtons}
+          >
+            <Text style={styles.filterButtonsText}>Math</Text>
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
+          <TouchableOpacity
+            onPress={() => Alert.alert("Hvala :D")}
+            style={styles.filterButtons}
+          >
             <Text style={styles.filterButtonsText}>Coding</Text>
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}>
-            <Text style={styles.filterButtonsText}>Filters</Text>
+          <TouchableOpacity
+            onPress={() => Alert.alert("Hvala :D")}
+            style={styles.filterButtons}
+          >
+            <Text style={styles.filterButtonsText}>English</Text>
           </TouchableOpacity>
         </View>
-
       </View>
 
       <Biography
         description={bio}
-        location={location} university={faculty} cost={price} />
+        location={location}
+        university={faculty}
+        cost={price}
+      />
 
-      <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.tutorButton}>
+      <TouchableOpacity
+        onPress={() => Alert.alert("Hvala :D")}
+        style={styles.tutorButton}
+      >
         <Text style={styles.tutorButtonText}>Contact tutor</Text>
       </TouchableOpacity>
-
-
-
+      </View>
     </ScrollView>
   );
 }
@@ -69,12 +96,13 @@ PublicProfile.navigationOptions = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingTop: 30,
     backgroundColor: "white",
   },
   contentContainer: {
     paddingTop: 15,
-    padding: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   optionIconContainer: {
     marginRight: 12,

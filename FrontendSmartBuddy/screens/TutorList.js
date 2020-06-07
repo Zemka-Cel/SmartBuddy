@@ -67,7 +67,7 @@ export default function TutorList({navigation}) {
 
         <View>
           <TouchableOpacity onPress={() => Alert.alert('Hvala :D')} style={styles.filterButtons}> 
-            <Text style={styles.filterButtonsText}>Algebra</Text> 
+            <Text style={styles.filterButtonsText}>Math</Text> 
           </TouchableOpacity> 
         </View>
         <View>

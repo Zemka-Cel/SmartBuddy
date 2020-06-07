@@ -7,7 +7,7 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <Text style={styles.welcomeText}>Hi, user!</Text>
+          <Text style={styles.welcomeText}>Hi, Lejla!</Text>
           <Text style={styles.welcomeDescription}>Connect with your future tutor.</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Tutors')} style={styles.tutorButton}>
             <Text style={styles.tutorButtonText}>Find your tutor</Text>
