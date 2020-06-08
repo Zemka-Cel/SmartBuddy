@@ -33,47 +33,56 @@ export default function Profile({navigation}) {
 
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      {users.map((u)=> (
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
+      {users.map((u) => (
         <View>
-      <View style={{flex:1, alignItems: 'center'}}> 
+          <View style={{ flex: 1, alignItems: "center" }}>
             <Image
-              style={{width:100, height: 100, borderRadius: 50, marginBottom: 4}}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 50,
+                marginBottom: 4,
+              }}
               source={u.imgSrc}
             />
-        <Username style={styles.userName}>{u.name}</Username> 
-        <Text style={styles.userEmail}>{u.email}</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('EditProfile')} style={styles.editButton}> 
-        <Text style={styles.editButtonText}>Edit</Text> 
-        </TouchableOpacity> 
-      </View>
+            <Username style={styles.userName}>{u.name}</Username>
+            <Text style={styles.userEmail}>{u.email}</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("EditProfile")}
+              style={styles.editButton}
+            >
+              <Text style={styles.editButtonText}>Edit</Text>
+            </TouchableOpacity>
+          </View>
 
-      <View style={{
-       
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginTop: 15, }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            {u.description.map((d) => (
+              <TouchableOpacity
+                onPress={() => Alert.alert("Hvala :D")}
+                style={styles.filterButtons}
+              >
+                <Text style={styles.filterButtonsText}>{d}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
 
-        <View>
-        <TouchableOpacity style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Algebra</Text> 
-        </TouchableOpacity> 
-        </View>
-        <View>
-        <TouchableOpacity style={styles.filterButtons}> 
-        <Text style={styles.filterButtonsText}>Coding</Text> 
-        </TouchableOpacity> 
-        </View>
-       
-       
-       </View>
-       
-       <Biography 
-       description={u.bio}
-       location={u.location} university={u.faculty} cost={u.price} />
+          <Biography
+            description={u.bio}
+            location={u.location}
+            university={u.faculty}
+            cost={u.price}
+          />
         </View>
       ))}
-
     </ScrollView>
   );
 }
