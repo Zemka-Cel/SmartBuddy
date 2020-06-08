@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     width: 400,
     height: 400,
     resizeMode: "contain",
-    flex: 1,
+    alignContent: 'center',
   },
   SignIn: {
     backgroundColor: "#3D90CE",

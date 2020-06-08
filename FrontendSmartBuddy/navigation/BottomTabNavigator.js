@@ -12,7 +12,7 @@ import EditProfile from '../screens/EditProfile';
 import StartScreen from '../screens/StartScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'StartScreen';
+const INITIAL_ROUTE_NAME = 'Home';
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -79,14 +79,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       /> */}
      
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="StartScreen"
         component={StartScreen}
         options={{
           title: 'StartScreen',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }

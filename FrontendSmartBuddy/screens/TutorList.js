@@ -90,6 +90,7 @@ export default function TutorList({navigation}) {
          navigation.navigate('PublicProfile', { 
            name: t.name,
            email: t.email,
+           description: t.description,
            bio: t.bio,
            price: t.price,
            faculty: t.faculty,
@@ -98,7 +99,15 @@ export default function TutorList({navigation}) {
          })
        }}>
         
-       <TutorCard image={t.imgSrc} name={t.name} description={t.description}></TutorCard>
+       <TutorCard image={t.imgSrc} name={t.name} description={t.description + " "}
+    // //    description={
+    // //      t.description.forEach(zanimanje => (
+    // //        zanimanje + ' '
+    // //  ))
+         
+    >
+
+         </TutorCard>
        </TouchableOpacity>
        ))}
 

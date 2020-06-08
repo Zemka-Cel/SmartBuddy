@@ -23,6 +23,7 @@ export default function PublicProfile({ route, navigation }) {
     faculty,
     location,
     image,
+    description,
   } = route.params;
 
   return (
@@ -31,60 +32,66 @@ export default function PublicProfile({ route, navigation }) {
       contentContainerStyle={styles.contentContainer}
     >
       <View>
-      <View style={{ flex: 1, alignItems: "center", }}>
-        <Image
-          style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 4 }}
-          source={image}
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Image
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 50,
+              marginBottom: 4,
+            }}
+            source={image}
+          />
+          <Username style={styles.userName}>{name || " "}</Username>
+          <Text style={styles.userEmail}>{email}</Text>
+        </View>
+
+     
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            {description.map((d) => (
+              <TouchableOpacity
+                onPress={() => Alert.alert("Hvala :D")}
+                style={styles.filterButtons}
+              >
+                <Text style={styles.filterButtonsText}>{d}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          {/* <View>
+            <TouchableOpacity
+              onPress={() => Alert.alert("Hvala :D")}
+              style={styles.filterButtons}
+            >
+              <Text style={styles.filterButtonsText}>Coding</Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity
+              onPress={() => Alert.alert("Hvala :D")}
+              style={styles.filterButtons}
+            >
+              <Text style={styles.filterButtonsText}>English</Text>
+            </TouchableOpacity>
+          </View> */}
+
+        <Biography
+          description={bio}
+          location={location}
+          university={faculty}
+          cost={price}
         />
-        <Username style={styles.userName}>{name || " "}</Username>
-        <Text style={styles.userEmail}>{email}</Text>
-      </View>
 
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <View>
-          <TouchableOpacity
-            onPress={() => Alert.alert("Hvala :D")}
-            style={styles.filterButtons}
-          >
-            <Text style={styles.filterButtonsText}>Math</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-            onPress={() => Alert.alert("Hvala :D")}
-            style={styles.filterButtons}
-          >
-            <Text style={styles.filterButtonsText}>Coding</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-            onPress={() => Alert.alert("Hvala :D")}
-            style={styles.filterButtons}
-          >
-            <Text style={styles.filterButtonsText}>English</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <Biography
-        description={bio}
-        location={location}
-        university={faculty}
-        cost={price}
-      />
-
-      <TouchableOpacity
-        onPress={() => Alert.alert("Hvala :D")}
-        style={styles.tutorButton}
-      >
-        <Text style={styles.tutorButtonText}>Contact tutor</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => Alert.alert("Hvala :D")}
+          style={styles.tutorButton}
+        >
+          <Text style={styles.tutorButtonText}>Contact tutor</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
